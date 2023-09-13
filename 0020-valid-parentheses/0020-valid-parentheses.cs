@@ -21,10 +21,6 @@ public class Solution {
                 return false;
             }
         }
-        if(stack.Count != 0)
-        {
-            return false;
-        }
-        return true;
+        return stack.Count == 0;
     }
 }
