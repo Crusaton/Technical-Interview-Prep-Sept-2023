@@ -1,10 +1,15 @@
 public class Solution {
     public bool ContainsDuplicate(int[] nums) {
         
+        // Can use a hashset since we only want unique values
         HashSet<int> seenNums = new();
-        for(int i = 0; i < nums.Length; i++)
+        
+        
+        // Loop through dataset
+        foreach(int num in nums)
         {
-            if(!seenNums.Add(nums[i]))
+            // If we can't add the value we know we've found a duplicate.
+            if(!seenNums.Add(num))
             {
                 return true;
             }
