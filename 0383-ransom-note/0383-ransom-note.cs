@@ -9,11 +9,11 @@ public class Solution {
         }
         foreach(char c in ransomNote)
         {
-            magazineChars[c - 'a']--;
-            if(magazineChars[c - 'a'] < 0)
+            if(magazineChars[c - 'a'] == 0)
             {
                 return false;
             }
+            magazineChars[c - 'a']--;
         }
         return true;
     }
