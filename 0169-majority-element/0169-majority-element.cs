@@ -1,29 +1,24 @@
 public class Solution {
     public int MajorityElement(int[] nums) {
         
-        Dictionary<int, int> seenNums = new();
+        int major = nums[0], count = 1;
         
-        for(int i = 0; i < nums.Length; i++)
+        for(int i = 1; i < nums.Length; i++)
         {
-            if(seenNums.ContainsKey(nums[i]))
+            if(count == 0)
             {
-                seenNums[nums[i]]++;
+                count++;
+                major = nums[i];
+            }
+            else if(major == nums[i])
+            {
+                count++;
             }
             else
             {
-                seenNums.Add(nums[i], 1);
+                count--;
             }
         }
-        int greatestSeen = 0;
-        int val = 0;
-        foreach(var entry in seenNums)
-        {
-            if(entry.Value > greatestSeen)
-            {
-                greatestSeen = entry.Value;
-                val = entry.Key;
-            }
-        }
-        return val;
+        return major;
     }
 }
