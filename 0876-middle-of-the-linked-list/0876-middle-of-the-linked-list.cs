@@ -15,6 +15,7 @@ public class Solution {
         ListNode slow = head;
         ListNode fast = head;
         
+        // Similar answer to the linked list cycle question, but since we can expect to not have a cycle in this list we can reuse the logic to get the fast node to the end. Since the fast node is skipping 2 ahead by the time it ends, the slow should be at the mid point.
         while(fast != null && fast.next != null)
         {
             fast = fast.next.next;
