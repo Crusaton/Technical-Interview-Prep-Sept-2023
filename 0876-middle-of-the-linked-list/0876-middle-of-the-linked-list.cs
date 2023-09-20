@@ -12,27 +12,14 @@
 public class Solution {
     public ListNode MiddleNode(ListNode head) {
         
-        int counter = 0;
-        ListNode temp = head;
-        while(head != null)
-        {
-            counter++;
-            head = head.next;
-        }
+        ListNode slow = head;
+        ListNode fast = head;
         
-        if(counter % 2 == 0)
+        while(fast != null && fast.next != null)
         {
-            counter = (counter / 2) + 1;
+            fast = fast.next.next;
+            slow = slow.next;
         }
-        else
-        {
-            decimal tempp = counter / 2;
-            counter = (int)Math.Round(tempp) + 1;
-        }
-        for(int i = 1; i < counter; i++)
-        {
-            temp = temp.next;
-        }
-        return temp;
+        return slow;
     }
 }
