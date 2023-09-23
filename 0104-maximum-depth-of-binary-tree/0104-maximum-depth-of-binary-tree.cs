@@ -13,9 +13,13 @@
  */
 public class Solution {
     public int MaxDepth(TreeNode root) {
+        
+        // If the current node is null we know we've reached the end of the tree and can break the loop.
         if(root == null)
         {
             return 0;
         }
+        // We recursively add 1 to the max side of the tree.
+        // Since we are starting at the very bottom we'd start with 0, add 1 etc. 
         return 1 + Math.Max(MaxDepth(root.left), MaxDepth(root.right));    }
 }
