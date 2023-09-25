@@ -1,26 +1,26 @@
 public class Solution {
     public bool IsValid(string s) {
-        Stack<char> stack = new();
+        Stack<char> curr = new();
         
-        foreach(char c in s)
+        for(int i = 0; i < s.Length; i++)
         {
-            if(c == '(')
+            if(s[i] == '(')
             {
-                stack.Push(')');
+                curr.Push(')');
             }
-            else if(c == '[')
+            else if(s[i] == '{')
             {
-                stack.Push(']');
+                curr.Push('}');
             }
-            else if(c == '{')
+            else if(s[i] == '[')
             {
-                stack.Push('}');
+                curr.Push(']');
             }
-            else if(stack.Count == 0 || stack.Pop() != c)
+            else if(curr.Count() == 0 || curr.Pop() != s[i])
             {
                 return false;
             }
         }
-        return stack.Count == 0;
+        return curr.Count() == 0;
     }
 }
