@@ -14,6 +14,7 @@ public class Solution {
         
         ListNode head = new();
         ListNode tail = head;
+        
         while(list1 != null && list2 != null)
         {
             if(list1.val < list2.val)
@@ -28,16 +29,14 @@ public class Solution {
             }
             tail = tail.next;
         }
-        
         if(list1 != null)
         {
             tail.next = list1;
         }
-        if(list2 != null)
+        if (list2 != null)
         {
             tail.next = list2;
         }
-        
         return head.next;
     }
 }
