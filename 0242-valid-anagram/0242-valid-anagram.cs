@@ -1,22 +1,24 @@
 public class Solution {
     public bool IsAnagram(string s, string t) {
         
+        if(s.Length != t.Length)
+        {
+            return false; 
+        }
+        
         int[] seenChars = new int[26];
         
-        foreach(char c in s)
+        for(int i = 0; i < s.Length; i++)
         {
-            seenChars[c - 'a']++;
+            seenChars[s[i] - 'a']++;
         }
-        foreach(char c in t)
+        for(int i = 0; i < t.Length; i++)
         {
-            seenChars[c - 'a']--;
-        }
-        foreach(int i in seenChars)
-        {
-            if(i != 0)
+            if(seenChars[t[i] - 'a'] == null || seenChars[t[i] - 'a'] <= 0)
             {
                 return false;
             }
+            seenChars[t[i] - 'a']--;
         }
         return true;
     }
