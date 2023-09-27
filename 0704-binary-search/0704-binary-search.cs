@@ -7,7 +7,6 @@ public class Solution {
         while(left <= right)
         {
             int mid = right + (left - right) / 2;
-            Console.WriteLine($"{left} | {right} | {mid} | {nums[mid]} | {target} ");
             if(nums[mid] == target)
             {
                 return mid;
