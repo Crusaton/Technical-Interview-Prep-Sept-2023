@@ -1,6 +1,9 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         
+        // Time Complexity: O(n) because we only iterate over the array once and the time will linearly scale based on the size of the input array.
+        // Space Complexity: O(n) because the size of our hashmap will scale based on the size of the input array.
+        
         // Dictionary/HashMap to track the numbers we've seen and their indices
         Dictionary<int, int> seenNums = new();
         
