@@ -10,9 +10,9 @@ public class Solution {
             {
                 return new int[2] { seenNums[remainder], i };
             }
-            else
+            else if(!seenNums.ContainsKey(nums[i]))
             {
-                seenNums.TryAdd(nums[i], i);
+                seenNums.Add(nums[i], i);
             }
         }
         return null;
