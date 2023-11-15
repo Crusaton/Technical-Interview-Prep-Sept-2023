@@ -1,5 +1,6 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
+        
         Dictionary<int, int> seenNums = new();
         
         for(int i = 0; i < nums.Length; i++)
@@ -10,9 +11,9 @@ public class Solution {
             {
                 return new int[2] { seenNums[remainder], i };
             }
-            else if(!seenNums.ContainsKey(nums[i]))
+            else
             {
-                seenNums.Add(nums[i], i);
+                seenNums.TryAdd(nums[i], i);
             }
         }
         return null;
