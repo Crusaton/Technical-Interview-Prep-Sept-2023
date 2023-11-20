@@ -4,23 +4,23 @@ public class Solution {
         
         foreach(char c in s)
         {
-            if(c == '(')
+            if(c == '{')
             {
-                st.Push(')');
+                st.Push('}');
             }
             else if(c == '[')
             {
                 st.Push(']');
             }
-            else if(c == '{')
+            else if(c == '(')
             {
-                st.Push('}');
+                st.Push(')');
             }
-            else if(st.Count == 0 || st.Pop() != c)
+            else if(st.Count() == 0 || st.Pop() != c)
             {
                 return false;
             }
         }
-        return st.Count == 0;
+        return st.Count() == 0;
     }
 }
