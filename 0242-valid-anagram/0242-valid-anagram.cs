@@ -1,23 +1,19 @@
 public class Solution {
     public bool IsAnagram(string s, string t) {
         
-        int[] seenChars = new int[26];
+        int[] freq = new int[26];
         
         foreach(char c in s)
         {
-            seenChars[c - 'a']++;
+            freq[c - 'a']++;
         }
         foreach(char c in t)
         {
-            if(seenChars[c - 'a'] <= 0)
-            {
-                return false;
-            }
-            seenChars[c - 'a']--;
+            freq[c -'a']--;
         }
-        foreach(int i in seenChars)
+        foreach(int c in freq)
         {
-            if(i != 0)
+            if(c != 0)
             {
                 return false;
             }
